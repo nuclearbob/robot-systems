@@ -1,5 +1,5 @@
 [build-system]
-requires = [<s>"setuptools>=45"</s>, <s>"setuptools_scm[toml]>=6.2"</s>]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
 [tool.setuptools_scm]
 [project]
 name = "systems_robot"

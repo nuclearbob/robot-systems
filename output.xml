@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on darwin)" generated="20221006 11:48:48.071" rpa="false" schemaversion="3">
+<suite id="s1" name="Systems Robot" source="/Users/mbrustkern/git/systems_robot/systems_robot">
+<suite id="s1-s1" name="Tests" source="/Users/mbrustkern/git/systems_robot/systems_robot/tests">
+<suite id="s1-s1-s1" name="Linux" source="/Users/mbrustkern/git/systems_robot/systems_robot/tests/linux.robot">
+<test id="s1-s1-s1-t1" name="Test Linux Network Info" line="7">
+<kw name="Comment" library="BuiltIn">
+<arg>Run both commands to log info</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20221006 11:48:48.191" endtime="20221006 11:48:48.191"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${Result0}</var>
+<arg>ip</arg>
+<arg>a</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221006 11:48:48.192" level="INFO">Starting process:
+ip a</msg>
+<msg timestamp="20221006 11:48:48.232" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'ip'</msg>
+<status status="FAIL" starttime="20221006 11:48:48.191" endtime="20221006 11:48:48.236"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${Result1}</var>
+<arg>ip</arg>
+<arg>link</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="NOT RUN" starttime="20221006 11:48:48.237" endtime="20221006 11:48:48.237"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Assert that the commands worked right</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="NOT RUN" starttime="20221006 11:48:48.238" endtime="20221006 11:48:48.238"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>{Result0.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" starttime="20221006 11:48:48.238" endtime="20221006 11:48:48.238"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>{Result1.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" starttime="20221006 11:48:48.239" endtime="20221006 11:48:48.239"/>
+</kw>
+<tag>Info</tag>
+<tag>linux</tag>
+<tag>Network</tag>
+<status status="FAIL" starttime="20221006 11:48:48.188" endtime="20221006 11:48:48.240">FileNotFoundError: [Errno 2] No such file or directory: 'ip'</status>
+</test>
+<test id="s1-s1-s1-t2" name="Test Expected To Fail" line="16">
+<kw name="Process Should Succeed">
+<arg>false</arg>
+<msg timestamp="20221006 11:48:48.244" level="FAIL">No keyword with name 'Process Should Succeed' found.</msg>
+<status status="FAIL" starttime="20221006 11:48:48.244" endtime="20221006 11:48:48.245"/>
+</kw>
+<tag>Fail</tag>
+<tag>linux</tag>
+<status status="FAIL" starttime="20221006 11:48:48.241" endtime="20221006 11:48:48.245">No keyword with name 'Process Should Succeed' found.</status>
+</test>
+<status status="FAIL" starttime="20221006 11:48:48.169" endtime="20221006 11:48:48.247"/>
+</suite>
+<suite id="s1-s1-s2" name="Package Manager" source="/Users/mbrustkern/git/systems_robot/systems_robot/tests/package_manager.robot">
+<test id="s1-s1-s2-t1" name="Test Yum" line="7">
+<kw name="Process Should Succeed">
+<arg>yum</arg>
+<arg>makecache</arg>
+<msg timestamp="20221006 11:48:48.262" level="FAIL">No keyword with name 'Process Should Succeed' found.</msg>
+<status status="FAIL" starttime="20221006 11:48:48.261" endtime="20221006 11:48:48.262"/>
+</kw>
+<kw name="Process Should Succeed">
+<arg>yum</arg>
+<arg>-y</arg>
+<arg>upgrade</arg>
+<status status="NOT RUN" starttime="20221006 11:48:48.264" endtime="20221006 11:48:48.264"/>
+</kw>
+<kw name="Process Should Succeed">
+<arg>yum</arg>
+<arg>install</arg>
+<arg>httpd</arg>
+<status status="NOT RUN" starttime="20221006 11:48:48.269" endtime="20221006 11:48:48.269"/>
+</kw>
+<tag>alma</tag>
+<tag>centos</tag>
+<tag>package_manager</tag>
+<tag>redhat</tag>
+<tag>rhel</tag>
+<tag>rocky</tag>
+<tag>rpm</tag>
+<tag>yum</tag>
+<status status="FAIL" starttime="20221006 11:48:48.259" endtime="20221006 11:48:48.270">No keyword with name 'Process Should Succeed' found.</status>
+</test>
+<test id="s1-s1-s2-t2" name="Test Apt" line="13">
+<kw name="Process Should Succeed">
+<arg>DEBIAN_FRONTEND=noninteractive</arg>
+<arg>apt</arg>
+<arg>update</arg>
+<msg timestamp="20221006 11:48:48.274" level="FAIL">No keyword with name 'Process Should Succeed' found.</msg>
+<status status="FAIL" starttime="20221006 11:48:48.274" endtime="20221006 11:48:48.274"/>
+</kw>
+<kw name="Process Should Succeed">
+<arg>apt</arg>
+<arg>-o</arg>
+<arg>Dpkg::Options::="--force-confold"</arg>
+<arg>dist-upgrade</arg>
+<arg>-q</arg>
+<arg>-y</arg>
+<arg>--force-yes</arg>
+<status status="NOT RUN" starttime="20221006 11:48:48.323" endtime="20221006 11:48:48.324"/>
+</kw>
+<kw name="Process Should Succeed">
+<arg>apt</arg>
+<arg>-o</arg>
+<arg>Dpkg::Options::="--force-confold"</arg>
+<arg>install</arg>
+<arg>fortune-mod</arg>
+<arg>-q</arg>
+<arg>-y</arg>
+<arg>--force-yes</arg>
+<status status="NOT RUN" starttime="20221006 11:48:48.370" endtime="20221006 11:48:48.370"/>
+</kw>
+<tag>apt</tag>
+<tag>deb</tag>
+<tag>debian</tag>
+<tag>package_manager</tag>
+<tag>ubuntu</tag>
+<status status="FAIL" starttime="20221006 11:48:48.271" endtime="20221006 11:48:48.402">No keyword with name 'Process Should Succeed' found.</status>
+</test>
+<status status="FAIL" starttime="20221006 11:48:48.249" endtime="20221006 11:48:48.406"/>
+</suite>
+<status status="FAIL" starttime="20221006 11:48:48.166" endtime="20221006 11:48:48.407"/>
+</suite>
+<status status="FAIL" starttime="20221006 11:48:48.074" endtime="20221006 11:48:48.408"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">alma</stat>
+<stat pass="0" fail="1" skip="0">apt</stat>
+<stat pass="0" fail="1" skip="0">centos</stat>
+<stat pass="0" fail="1" skip="0">deb</stat>
+<stat pass="0" fail="1" skip="0">debian</stat>
+<stat pass="0" fail="1" skip="0">Fail</stat>
+<stat pass="0" fail="1" skip="0">Info</stat>
+<stat pass="0" fail="2" skip="0">linux</stat>
+<stat pass="0" fail="1" skip="0">Network</stat>
+<stat pass="0" fail="2" skip="0">package_manager</stat>
+<stat pass="0" fail="1" skip="0">redhat</stat>
+<stat pass="0" fail="1" skip="0">rhel</stat>
+<stat pass="0" fail="1" skip="0">rocky</stat>
+<stat pass="0" fail="1" skip="0">rpm</stat>
+<stat pass="0" fail="1" skip="0">ubuntu</stat>
+<stat pass="0" fail="1" skip="0">yum</stat>
+</tag>
+<suite>
+<stat pass="0" fail="4" skip="0" id="s1" name="Systems Robot">Systems Robot</stat>
+<stat pass="0" fail="4" skip="0" id="s1-s1" name="Tests">Systems Robot.Tests</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s1-s1" name="Linux">Systems Robot.Tests.Linux</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s1-s2" name="Package Manager">Systems Robot.Tests.Package Manager</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221006 11:48:48.187" level="ERROR">Error in file '/Users/mbrustkern/git/systems_robot/systems_robot/tests/linux.robot' on line 3: Resource file 'systems-robot.keywords.Process_Keywords.robot' does not exist.</msg>
+<msg timestamp="20221006 11:48:48.258" level="ERROR">Error in file '/Users/mbrustkern/git/systems_robot/systems_robot/tests/package_manager.robot' on line 3: Resource file 'systems-robot.keywords.Process_Keywords.robot' does not exist.</msg>
+</errors>
+</robot>
