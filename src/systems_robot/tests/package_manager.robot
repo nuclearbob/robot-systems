@@ -1,6 +1,6 @@
 *** Settings ***
 Library    Process
-Resource    systems-robot.keywords.Process_Keywords.robot
+Resource    systems_robot.keywords.Process_Keywords.robot
 Force Tags    package_manager
 
 *** Test Cases ***
