@@ -1,6 +1,5 @@
 *** Settings ***
-Library    Process
-Resource    systems_robot.keywords.Process_Keywords.robot
+Resource    systems_robot/keywords/Process_Keywords.robot
 Force Tags    package_manager
 
 *** Test Cases ***
@@ -12,6 +11,6 @@ Test Yum
 
 Test Apt
     [Tags]    apt    deb    debian    ubuntu
-    Process Should Succeed    DEBIAN_FRONTEND=noninteractive    apt    update
+    Process Should Succeed    DEBIAN_FRONTEND=noninteractive    apt    update    shell=True
     Process Should Succeed    apt    -o    Dpkg::Options::="--force-confold"    dist-upgrade    -q    -y    --force-yes
     Process Should Succeed    apt    -o    Dpkg::Options::="--force-confold"    install    fortune-mod    -q    -y    --force-yes

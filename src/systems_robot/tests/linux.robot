@@ -1,6 +1,5 @@
 *** Settings ***
-Library    Process
-Resource    systems_robot.keywords.Process_Keywords.robot
+Resource    systems_robot/keywords/Process_Keywords.robot
 Force Tags    linux
 
 *** Test Cases ***

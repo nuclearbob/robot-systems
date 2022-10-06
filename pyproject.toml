@@ -5,7 +5,7 @@ include-package-data = true
 where = ["src"]
 
 [tool.setuptools.package-data]
-systems_robot = ["*.robot"]
+systems_robot = ["*/*.robot"]
 
 [project]
 name = "systems_robot"
