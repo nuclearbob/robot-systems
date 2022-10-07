@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    systems_robot/keywords/Process_Keywords.robot
+Resource    ../keywords/Process_Keywords.robot
 Force Tags    linux
 
 *** Test Cases ***
