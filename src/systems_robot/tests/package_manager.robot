@@ -7,7 +7,7 @@ Test Yum
     [Tags]    yum    rpm    redhat    rhel    centos    alma    rocky
     Process Should Succeed    yum    makecache
     Process Should Succeed    yum    -y    upgrade
-    Process Should Succeed    yum    install    httpd
+    Process Should Succeed    yum    -y install    httpd
 
 Test Apt
     [Tags]    apt    deb    debian    ubuntu
