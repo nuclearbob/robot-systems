@@ -9,8 +9,8 @@ Test Linux Network Info
     ${Result0}=    Run Process    ip    a
     ${Result1}=    Run Process    ip    link
     Comment    Assert that the commands worked right
-    Should Be Equal As Integers    {Result0.rc}    0
-    Should Be Equal As Integers    {Result1.rc}    0
+    Should Be Equal As Integers    ${Result0.rc}    0
+    Should Be Equal As Integers    ${Result1.rc}    0
 
 Test Expected To Fail
     [Tags]    Fail
