@@ -11,6 +11,6 @@ Test Yum
 
 Test Apt
     [Tags]    apt    deb    debian    ubuntu
-    Shell Process Should Succeed    DEBIAN_FRONTEND=noninteractive apt update    shell=True
-    Shell Process Should Succeed    apt -o Dpkg::Options::="--force-confold" dist-upgrade -q -y --force-yes    shell=True
-    Shell Process Should Succeed    apt -o Dpkg::Options::="--force-confold" install fortune-mod -q -y --force-yes    shell=True
+    Shell Process Should Succeed    DEBIAN_FRONTEND=noninteractive apt update
+    Shell Process Should Succeed    apt -o Dpkg::Options::="--force-confold" dist-upgrade -q -y --force-yes
+    Shell Process Should Succeed    apt -o Dpkg::Options::="--force-confold" install fortune-mod -q -y --force-yes
