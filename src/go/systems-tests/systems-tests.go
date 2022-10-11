@@ -19,7 +19,7 @@ func run_cmd(cmd string, args ...string) error {
 }
 
 func main() {
-	run_cmd("yum", "update")
-	run_cmd("yum", "upgrade")
-	run_cmd("yum", "install", "httpd")
+	run_cmd("yum", "-y", "makecache")
+	run_cmd("yum", "-y", "upgrade")
+	run_cmd("yum", "-y", "install", "httpd")
 }
